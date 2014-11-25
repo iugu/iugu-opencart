@@ -153,7 +153,7 @@ class ControllerPaymentIuguBankslip extends Controller {
             $this->log->write('Pagamento iugu Boleto - Entrou no callback(). <br>ID do Pedido ' . $dados['id'] . ' Status ' . $dados['status']);
             $this->load->model('payment/iugu_bankslip');
             //Buscando o Pedido com base no ID do Pedido da IUGU
-            $order = $this->model_payment_iugu->getOrder($dados['id']);
+            $order = $this->model_payment_iugu_bankslip->getOrder($dados['id']);
             if (!empty($order)) {
                 $this->log->write('Pedido retornado com sucesso - Status ID ' . $order['order_status_id']);
                 $update_status_alert = false;
